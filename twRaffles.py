@@ -9,10 +9,9 @@ keywords = ["GIVEAWAY","Giveaway","giveaway"]
 cont = 0
 sleepTime = 60 * 10
 filename = 'links.txt'
-webhook_Valhalla = 'https://discordapp.com/api/webhooks/671330429944594472/ltGgcznGuMX7D849k9CzOWrL5_Ec-D9R7_sfpXM1T1B3P_NTcCCRmDOaKfKs6I5uEuVE'
-webhook_SnkrVandals = 'https://discordapp.com/api/webhooks/695387150920843305/lJv-uWFWHePUfOQZF4MurfmcBB7zFnI_5JoEpkDOwvpI58OEa3Y2V8rW6Ny5OjViTldc'
+webhook= ''
 
-webhook_urls = [webhook_Valhalla, webhook_SnkrVandals]
+webhook_urls = [webhook]
 
 # Authenticate to Twitter
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
@@ -56,7 +55,7 @@ def check_link(link):
 
 #avatar_url= "http://i.imgur.com/faJ9n.jpg"
 def send_raffle(link):
-    webhook = DiscordWebhook(url=webhook_urls, username= "@NotifyGiveaway", content=link)
+    webhook = DiscordWebhook(url=webhook_urls, username= "@username", avatar_url= "http://i.imgur.com/.jpg", content=link)
     response = webhook.execute()
 
 while True:
